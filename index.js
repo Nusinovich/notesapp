@@ -4,18 +4,19 @@ const port = 3000
 
 // Crate Home route
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.sendFile('pages/index.html', {root: __dirname})
 })
 
 // Crate login route
 app.get('/login', (req, res) => {
-    res.send('login')
-  })
+    res.sendFile('pages/login.html', {root: __dirname})
+})
 
-  app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
+// Crate signup route
+app.get('/signup', (req, res) => {
+    res.sendFile('pages/signup.html', {root: __dirname})
+})
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${port}`)
 })
