@@ -1,8 +1,18 @@
 const express = require('express')
 const app = express()
+const cors = require('cors');
+require('dotenv').config();
+
+//middleware
 app.use(express.json())
 app.use(express.urlencoded())
-require('dotenv').config();
+app.use(cors());
+
+// Enable CORS for all origins
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  });
 
 // Crate Home endpoint
 app.get('/', (req, res) => {
