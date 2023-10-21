@@ -1,5 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const User = require('./models/User')
+const Note = require('./models/Notes')
 const app = express()
 const cors = require('cors');
 require('dotenv').config();
@@ -39,14 +41,21 @@ app.post('/getnotes', (req, res) => {
 
 // Create login API
 app.post('/login', (req, res) => {
-    const {userToken} = req.body
-    res.sendFile('pages/signup.html', {root: __dirname})
+    let user = user.find(req.body)
+    if (!user){
+        res.send(200).json({success: false, mesage:"No user found"})
+    }
+    else{
+        res.send(200).json({success: true, user, mesage:"User found"})
+    }
 })
 
 // Create signup API
-app.post('/signup', (req, res) => {
+app.post('/signup', async(req, res) => {
     const {userToken} = req.body
-    res.sendFile('pages/signup.html', {root: __dirname})
+    console.log(req.body)
+    let user = await User.create(req.body)
+    res.status(200).json({success: true, user: user})
 })
 
 // Create add note API
