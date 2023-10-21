@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
-const port = 3000
+app.use(express.json())
+app.use(express.urlencoded())
+require('dotenv').config();
 
 // Crate Home route
 app.get('/', (req, res) => {
@@ -17,6 +19,17 @@ app.get('/signup', (req, res) => {
     res.sendFile('pages/signup.html', {root: __dirname})
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+// Create POST route to get the notes
+app.post('/getnotes', (req, res) => {
+    const {userToken} = req.body
+    res.sendFile('pages/signup.html', {root: __dirname})
 })
+
+
+
+
+
+const port = process.env.port
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
