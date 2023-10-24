@@ -41,12 +41,12 @@ app.post('/getnotes', (req, res) => {
 
 // Create login API
 app.post('/login', (req, res) => {
-    let user = user.find(req.body)
+    let user = User.find(req.body)
     if (!user){
-        res.send(200).json({success: false, mesage:"No user found"})
+        res.status(200).json({success: false, mesage:"No user found"})
     }
     else{
-        res.send(200).json({success: true, user, mesage:"User found"})
+        res.status(200).json({success: true, user: {email: user.email}, mesage:"User found"})
     }
 })
 
