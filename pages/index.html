@@ -105,7 +105,9 @@
                 },
                 body: JSON.stringify(data),
             });
-            return response.json();
+            let rdata = await response.json()
+                return rdata
+            
         }
 
 
@@ -124,12 +126,15 @@
 
         // Listener for the submit button for new note
         let submit = document.getElementById('submit')
-        submit.addEventListener('click', ()=>{
+        submit.addEventListener('click', async ()=>{
             let title = document.getElementById('title').value
             let description = document.getElementById('description').value
             let email = JSON.parse(localStorage.getItem("user"))?.email
             console.log ('Data was submited', title, description, email)
-            postData('/addnote', {title, description, email})
+            let resp = await postData('/addnote', {title, description, email})
+            if(resp.success){
+            alert("Note created!")
+            }
         })
 
     </script>

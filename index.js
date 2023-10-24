@@ -33,10 +33,10 @@ app.get('/signup', (req, res) => {
     res.sendFile('pages/signup.html', {root: __dirname})
 })
 
-// Create get notes API
+// Create notes API
 app.post('/getnotes', (req, res) => {
-    const {userToken} = req.body
-    res.sendFile('pages/signup.html', {root: __dirname})
+    let notes = await Note.find({email: req.body.email})
+    res.status(200).json({success: true, user: {email: user.email}, mesage:"User found"})
 })
 
 // Create login API
@@ -59,14 +59,16 @@ app.post('/signup', async(req, res) => {
 })
 
 // Create add note API
-app.post('/addnote', (req, res) => {
+app.post('/addnote', async(req, res) => {
     const {userToken} = req.body
-    res.sendFile('pages/signup.html', {root: __dirname})
+    let note = await Note.create(req.body)
+    res.status(200).json({success: true, note})
 })
 
 // Create delete note API
-app.post('/deletenote', (req, res) => {
+app.post('/deletenote', async(req, res) => {
     const {userToken} = req.body
+    await Note.create(req.body)
     res.sendFile('pages/signup.html', {root: __dirname})
 })
 
