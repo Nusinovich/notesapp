@@ -23,6 +23,11 @@ app.get('/', (req, res) => {
     res.sendFile('pages/index.html', {root: __dirname})
 })
 
+// Crate About endpoint
+app.get('/about', (req, res) => {
+    res.sendFile('pages/about.html', {root: __dirname})
+})
+
 // Crate login endpoint
 app.get('/login', (req, res) => {
     res.sendFile('pages/login.html', {root: __dirname})
