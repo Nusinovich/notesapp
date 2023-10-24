@@ -78,6 +78,8 @@
 
         }
 
+        const fetchNotes = ()=>{
+
         //Get the notes by email
         const user = JSON.parse(localStorage.getItem('user'))
         // // in case of no user
@@ -85,6 +87,8 @@
         //     window.location = "/login"
         // }
         if (user && user.email) {
+            let noteContainer = document.querySelector('.mynotes')
+            noteContainer.innerHTML = ''
             const notes = postData('/getnotes', { email: user.email })
             //after getting the notes, show them
             notes.then((notes) => {
@@ -111,6 +115,8 @@
             alert("You need to login first!")
         }
 
+        }
+        fetchNotes()
 
         // Listener for the submit button for new note
         let submit = document.getElementById('submit')
@@ -122,6 +128,7 @@
             let resp = await postData('/addnote', { title, description, email })
             if (resp.success) {
                 alert("Note created!")
+                fetchNotes()
             }
         })
 
