@@ -82,10 +82,6 @@
 
         //Get the notes by email
         const user = JSON.parse(localStorage.getItem('user'))
-        // // in case of no user
-        // if(!user || !user.token){
-        //     window.location = "/login"
-        // }
         if (user && user.email) {
             let noteContainer = document.querySelector('.mynotes')
             noteContainer.innerHTML = ''
