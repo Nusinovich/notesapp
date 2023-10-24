@@ -33,10 +33,11 @@ app.get('/signup', (req, res) => {
     res.sendFile('pages/signup.html', {root: __dirname})
 })
 
+
 // Create notes API
-app.post('/getnotes', (req, res) => {
+app.post('/getnotes', async(req, res) => {
     let notes = await Note.find({email: req.body.email})
-    res.status(200).json({success: true, user: {email: user.email}, mesage:"User found"})
+    res.status(200).json({success: true, notes})
 })
 
 // Create login API
