@@ -127,7 +127,9 @@
         submit.addEventListener('click', ()=>{
             let title = document.getElementById('title').value
             let description = document.getElementById('description').value
-            console.log ('Data was submited', title, description)
+            let email = JSON.parse(localStorage.getItem("user"))?.email
+            console.log ('Data was submited', title, description, email)
+            postData('/addnote', {title, description, email})
         })
 
     </script>

@@ -40,8 +40,8 @@ app.post('/getnotes', (req, res) => {
 })
 
 // Create login API
-app.post('/login', (req, res) => {
-    let user = User.find(req.body)
+app.post('/login', async(req, res) => {
+    let user = await User.findOne(req.body)
     if (!user){
         res.status(200).json({success: false, mesage:"No user found"})
     }
