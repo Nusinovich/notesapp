@@ -72,11 +72,12 @@ app.post('/addnote', async(req, res) => {
 })
 
 // Create delete note API
-app.post('/deletenote', async(req, res) => {
-    const {userToken} = req.body
-    await Note.create(req.body)
-    res.sendFile('pages/signup.html', {root: __dirname})
-})
+// app.post('/deletenote', async(req, res) => {
+//     const {userToken} = req.body
+//     let id = await userToken.deleteOne(req.body)
+//     res.status(200).json({success: true, id})
+// })
+  
 
 // .env connection
 const port = process.env.port
