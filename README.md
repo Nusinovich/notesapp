@@ -32,7 +32,7 @@ With its clean interface and powerful features, it's the perfect digital compani
 | Sat. 10/21/23 | Work on HTML code, CSS code, and test the code. |
 | Mon. 10/23/23 | Work on the JAVASCRIPT code. |
 | Wed. 10/25/23 | Work on the JAVASCRIPT code. |
-| Sat. 10/28/23 | Final fixes and design improvement, code review, testing, and final deployment. |
+| Sat. 10/28/23 | Final fixes and design improvement, code review, testing,README, and final deployment. |
 | Mon. 10/30/23 | Findl testing and fixes if needed. submit final project 3 |
 
 
@@ -46,3 +46,8 @@ With its clean interface and powerful features, it's the perfect digital compani
 | About Page content | https://chat.openai.com/ |
 | Application icon | https://thenounproject.com/icon/intersectionality-5912408/ |
 | Application Background Img | https://unsplash.com/photos/a-pink-and-blue-sky-with-a-few-clouds-GLf7bAwCdYg |
+
+## App Images
+
+### Your notes
+![Alt Text](`images/loginpage.png`)
