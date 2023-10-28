@@ -50,4 +50,12 @@ With its clean interface and powerful features, it's the perfect digital compani
 ## App Images
 
 ### Your notes
-![Alt Text](`images/loginpage.png`)
+![yournotes](https://github.com/Nusinovich/notesapp/assets/123439658/0d69006e-1eeb-4685-8c27-f38c4117284a)
+
+### Login Page
+![loginpage](https://github.com/Nusinovich/notesapp/assets/123439658/145541dd-af47-42e3-807e-2a9398c62ed1)
+
+### Signup page
+![signuppage](https://github.com/Nusinovich/notesapp/assets/123439658/a72d1e34-c356-44d9-a48c-b2b8032ada63)
+
+
