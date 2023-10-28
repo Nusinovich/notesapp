@@ -1,139 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notebook application</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-
-<body class="container mx-20 p-5 mb-2 bg-body-tertiary">
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-        <div class="container-fluid mx-3">
-            <a class="navbar-brand fs-4" href="/">Notebook</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Your Notes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About this app</a>
-                    </li>
-                </ul>
-                <div class="d-flex" role="search">
-                    <a href="/login"><button class="btn btn-primary mx-2" type="submit">Login</button></a>
-                    <a href="/Signup"><button class="btn btn-success mx-2" type="submit">Signup</button></a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Notebook application</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            body {
+                background-image: url('https://images.unsplash.com/photo-1554034483-04fda0d3507b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                background-repeat: no-repeat;
+            }
+        </style>  
+    </head>
     
-        <div class="container .bg-secondary.bg-gradient">
-            <h1 class="my-4">Add a Note</h1>
-            <div>
-                <div class="mb-3">
-                    <label for="title" class="form-label">Note Title</label>
-                    <input type="text" class="form-control" id="title" aria-describedby="titleHelp">
-                    <div id="titleHelp" class="form-text">Add your note title above</div>
+    <body class="container mx-20 p-5 mb-2">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+            <div class="container-fluid mx-3">
+                <a class="navbar-brand fs-4" href="/">Notebook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Your Notes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About this app</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex" role="search">
+                        <a href="/login"><button class="btn btn-primary mx-2" type="submit">Login</button></a>
+                        <a href="/Signup"><button class="btn btn-success mx-2" type="submit">Signup</button></a>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Note Description</label>
-                    <textarea type="text" class="form-control" id="description"></textarea>
-                </div>
-                <button id="submit" type="submit" class="btn btn-primary">Save</button>
             </div>
-
-            <h1 class="my-4">Your Notes</h1>
-
-            <div class="mynotes row">
-
-            </div>
-        </div>
+        </nav>
     
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    
+        
+            <div class="container .bg-secondary.bg-gradient">
+                <h1 class="my-4">Add a Note</h1>
+                <div>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Note Title</label>
+                        <input type="text" class="form-control" id="title" aria-describedby="titleHelp">
+                        <div id="titleHelp" class="form-text">Add your note title above</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Note Description</label>
+                        <textarea type="text" class="form-control" id="description"></textarea>
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                </div>
+    
+                <h1 class="my-4">Your Notes</h1>
+    
+                <div class="mynotes row">
+    
+                </div>
+            </div>
+        
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+            </script>
+    
+        <script>
+            async function postData(url = "", data = {}) {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+                let rdata = await response.json()
+                return rdata
+    
+            }
+    
+            const fetchNotes = () => {
+    
+                //Get the notes by email
+                const user = JSON.parse(localStorage.getItem('user'))
+                if (user && user.email) {
+                    let noteContainer = document.querySelector('.mynotes')
+                    noteContainer.innerHTML = ''
+                    const notes = postData('/getnotes', { email: user.email })
+                    //after getting the notes, show them
+                    notes.then((notes) => {
+                        console.log('Notes', notes.notes)
+                        //add notes from databse
+                        notes.notes.forEach(element => {
+    
+                            let note = `
+                            <div class="card mx-3" style = "width: 22rem;">
+                                <picture class="p-2 mx-1">
+                                    <img src="https://images.ctfassets.net/lzny33ho1g45/66zDmwVz2N4aN4k589RRjB/36f5339cd45ed61b6560292a696e91d5/notes"class="img-fluid img-thumbnail" alt="image of note and pen">
+                                </picture>
+                                <div class="card-body">
+                                    <h5 class="card-title">${element.title}</h5>
+                                    <p class="card-text">${element.description}</p>
+                                    <a href="" class="btn btn-primary">Delete Note</a>
+                                </div>
+                            </div>`
+    
+                            let noteContainer = document.querySelector('.mynotes')
+                            noteContainer.innerHTML += note
+                        });
+                    })
+                }
+    
+                else {
+                    alert("You need to login first!")
+                }
+    
+            }
+            fetchNotes()
+    
+            // Listener for the submit button for new note
+            let submit = document.getElementById('submit')
+            submit.addEventListener('click', async () => {
+                let title = document.getElementById('title').value
+                let description = document.getElementById('description').value
+                let email = JSON.parse(localStorage.getItem("user"))?.email
+                console.log('Data was submited', title, description, email)
+                let resp = await postData('/addnote', { title, description, email })
+                if (resp.success) {
+                    alert("Note created!")
+                    fetchNotes()
+                }
+            })
+    
         </script>
-
-    <script>
-        async function postData(url = "", data = {}) {
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-            let rdata = await response.json()
-            return rdata
-
-        }
-
-        const fetchNotes = () => {
-
-            //Get the notes by email
-            const user = JSON.parse(localStorage.getItem('user'))
-            if (user && user.email) {
-                let noteContainer = document.querySelector('.mynotes')
-                noteContainer.innerHTML = ''
-                const notes = postData('/getnotes', { email: user.email })
-                //after getting the notes, show them
-                notes.then((notes) => {
-                    console.log('Notes', notes.notes)
-                    //add notes from databse
-                    notes.notes.forEach(element => {
-
-                        let note = `
-                        <div class="card mx-3" style = "width: 22rem;">
-                            <picture class="p-2 mx-1">
-                                <img src="https://images.ctfassets.net/lzny33ho1g45/66zDmwVz2N4aN4k589RRjB/36f5339cd45ed61b6560292a696e91d5/notes" class="img-fluid img-thumbnail" alt="...">
-                            </picture>
-                            <div class="card-body">
-                                <h5 class="card-title">${element.title}</h5>
-                                <p class="card-text">${element.description}</p>
-                                <a href="" class="btn btn-primary">Delete Note</a>
-                            </div>
-                        </div>`
-
-                        let noteContainer = document.querySelector('.mynotes')
-                        noteContainer.innerHTML += note
-                    });
-                })
-            }
-
-            else {
-                alert("You need to login first!")
-            }
-
-        }
-        fetchNotes()
-
-        // Listener for the submit button for new note
-        let submit = document.getElementById('submit')
-        submit.addEventListener('click', async () => {
-            let title = document.getElementById('title').value
-            let description = document.getElementById('description').value
-            let email = JSON.parse(localStorage.getItem("user"))?.email
-            console.log('Data was submited', title, description, email)
-            let resp = await postData('/addnote', { title, description, email })
-            if (resp.success) {
-                alert("Note created!")
-                fetchNotes()
-            }
-        })
-
-    </script>
-
-</body>
-
+    
+    </body>
+    
 </html>
